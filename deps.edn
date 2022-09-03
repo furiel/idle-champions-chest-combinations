@@ -1,0 +1,6 @@
+{:paths ["."]
+ :deps {hickory/hickory {:mvn/version "0.7.1"}
+        clj-http/clj-http {:mvn/version "3.12.3"}
+        org.clojure/tools.cli {:mvn/version "1.0.206"}
+        com.taoensso/timbre {:mvn/version "5.2.1"}
+        clojurewerkz/machine_head {:mvn/version "1.0.0"}}}

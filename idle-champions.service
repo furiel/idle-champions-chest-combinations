@@ -1,0 +1,9 @@
+[Unit]
+Description=Run idle champions combination collection
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/java -cp /srv/idle-champions/idle-champions.jar clojure.main -m cli --state-file /srv/idle-champions/idle-champions.state --mqtt-uri tcp://localhost:1883
+
+[Install]
+WantedBy=default.target

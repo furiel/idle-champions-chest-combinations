@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Idle champions daily
+
+[Timer]
+OnBootSec=*-*-* 4:00:00
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target
