@@ -27,7 +27,8 @@
        (filter (fn [node]
                  (and (vector? node)
                       (= (first node) :td))))
-       (keep extract-code-from-dt)))
+       (keep extract-code-from-dt)
+       set))
 
 (defn collect []
   (let [html-dump (-> (client/get "https://idlechampions.fandom.com/wiki/Combinations")

@@ -3,7 +3,8 @@
             [clojure.java.io :as io]
             [taoensso.timbre :as log]
             [clojurewerkz.machine-head.client :as mqtt]
-            [fandom-source])
+            [fandom-source]
+            [incendar-source])
   (:import  [java.net URL URI MalformedURLException URISyntaxException]))
 
 (defn file-exists? [file-name]
@@ -35,7 +36,8 @@
     (let [mqtt-conn (some-> mqtt-uri (mqtt/connect {:opts {:auto-reconnect false}}))
           seen-codes (or (some-> state-file slurp clojure.string/split-lines set) #{})
           fandom-codes (fandom-source/collect)
-          available-codes (clojure.set/union fandom-codes)
+          incendar-codes (incendar-source/collect)
+          available-codes (clojure.set/union fandom-codes incendar-codes)
           new-codes (clojure.set/difference available-codes seen-codes)]
       (log/debug "new codes: " (vec new-codes))
 
