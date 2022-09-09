@@ -1,5 +1,10 @@
 # idle-champions-chest-combinations
-Collects Idle Champions of the Forgotten Realms chest combinations from https://idlechampions.fandom.com/wiki/Combinations
+Collects Idle Champions of the Forgotten Realms chest combinations
+
+## Sources
+
+- https://idlechampions.fandom.com/wiki/Combinations
+- https://incendar.com/idlechampions_codes.php
 
 # Create the jar file
 
@@ -9,7 +14,7 @@ just jar
 
 # Deployment
 - copy jar to server
-- create a state file
+- create an empty state file: `touch state.txt`.
 - update systemd service file with paths
 - enable systemd timer
 
